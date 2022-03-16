@@ -1,0 +1,387 @@
+@import "../utils/mixins"; 
+
+/*coeur survol plein*/
+label{
+  @include heart;
+  margin-right: 15px; 
+  
+  
+}
+
+/*restaurants*/
+.restaurants{
+  background-color: #f6f6f6;
+  padding: 50px 20px 50px 20px;
+}
+
+.restaurants_container{
+  max-width: 1400px;
+  margin: auto;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.restaurants_presentation{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: -20px;
+}
+/*responsive*/
+@media screen and(max-width:660px) {
+  .card_restaurant{
+    min-width: 400px;
+  }
+  
+}
+
+.card_restaurant{
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  min-width: 45%;
+  height: 250px;
+  margin: 0 20px 20px 0;
+  box-shadow: 0 10px 10px #e6e6e6;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease-in-out 0s;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.figure-card_restaurant{
+  height: 66%;
+  position: relative;
+}
+/*images_restaurants*/
+.preview{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+/*vignette_nouveau*/
+.flag-new{
+  position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #99E2D0;
+    color: #217460;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.card-restaurant_body{
+    display: flex;
+    flex: 1;
+    padding: 14px 14px 14px 14px;
+    justify-content: space-between;
+}
+
+
+/*menu restaurants*/
+/*image sur la page menu*/
+.underheader-omf {
+  height: 360px;
+}
+.underheader-omf__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*menu_restaurants*/
+.page-menu__line {
+  background-color: #99E2D0;
+  margin: 0;
+  height: 3px;
+  width: 40px;
+}
+
+.fond-gris-menu {
+  position: relative;
+  background-color: #ececec;
+  border-radius: 45px 45px 0px 0px;
+  margin-top: -50px;
+  padding-bottom: 10px;
+}
+
+.page-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-menu__plat {
+  margin: 15px 0px 5px 15px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+.page-restaurant {
+  margin: 0px 20px;
+}
+
+h1.page-restaurant__title {
+  font-family: "Shrikhand";
+  letter-spacing: 0.05rem;
+  padding-top: 24px;
+ 
+}
+.page-restaurants__title {
+  font-size: 24px;
+  font-weight: 900;
+  color: black;
+  padding-left: 15px;
+  padding-top: 15px;
+ 
+}
+
+.page-menu__text {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 20px 0px 8px 0px;
+}
+
+.page-menu__title {
+  margin-bottom: 15px;
+}
+
+.page-menu__accompagnement {
+  margin: 0px 0px 0px 15px;
+  font-weight: normal;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-menu__bloc {
+  margin: 0 15px 15px 0;
+  background: white;
+  height: 70px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px #d3d3d3;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: gradual-onset 1s ease-in-out 0s forwards;
+  transition-duration: 2s;
+  transition-property: margin-top;
+}
+/*animation slide par cards 1 à 1*/
+/*entrées*/
+.bloc-1{
+  -webkit-animation-delay: 150ms;
+    animation-delay: 150ms;
+}
+
+@keyframes bloc-1 {
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/*plats*/
+.bloc-2{
+  -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+
+@keyframes bloc-2 {
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/*desserts*/
+.bloc-3{
+  -webkit-animation-delay: 450ms;
+    animation-delay: 450ms;
+}
+
+@keyframes bloc-3 {
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/*entrées*/
+.bloc-4{
+  -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+}
+
+@keyframes bloc-4 {
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+}
+
+
+/*animation slide du bloc menu restaurant*/
+@keyframes gradual-onset {
+  from {
+    transform: translateY(60%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*animation de la partie prix coche menu*/
+.page-menu__prix {
+  margin: 0;
+  font-weight: bold;
+  width: 50px;
+}
+
+.page-menu__accetprix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transform-origin: left 40%;
+          transform-origin: left 40%;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+/*coche menu check*/
+.page-menu__check {
+  position: absolute;
+  background-color: #99E2D0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 65px;
+  -webkit-transform-origin: right 50%;
+          transform-origin: right 50%;
+  border-radius: 0px 20px 20px 0px;
+  -webkit-transform: translateX(65px);
+          transform: translateX(65px);
+  overflow: hidden;
+  transition: margin-right 0.5s ease-in-out 0s;
+}
+/*icon check menu*/
+.page-menu .fas.fa-check-circle {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-size: 1.5rem;
+  color: white;
+  opacity: 1;
+}
+
+
+/*animation coche_prix du menu*/
+.page-menu__bloc:hover .page-menu__accetprix {
+  width: calc(100% - 60px);
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.page-menu__bloc:hover .page-menu__check {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.page-menu__bloc:hover .fas.fa-check-circle {
+  animation: rotate-center 0.6s ease-in-out ;
+  animation: rotate-center 0.6s ease-in-out ;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+/*bouton commande*/
+.order-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+
+/*header_titre_menu*/
+.menu__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ececec;
+  border-radius: 20px;
+
+}
+
+.menu__btn{
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  
+}

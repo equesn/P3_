@@ -1,0 +1,122 @@
+/*coeur*/
+@mixin heart {
+  .fas {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.7rem;
+    font-weight: 100;
+    color: black;
+    animation: heartanimblack 1.2s;
+    position: relative;
+    
+    
+  
+    }
+
+  input {
+    visibility: hidden;
+   
+   
+   }
+
+  input[type="checkbox"]:checked ~ i {
+    font-weight: 900;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 121, 218, 1) 0%,
+      rgba(147, 86, 220, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: heartanim 1.5s;
+    
+   
+  
+  }
+}
+
+/*coeur survol plein*/
+label .fas {
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.7rem;
+  font-weight: 100;
+  color: black;
+  -webkit-animation: heartanimblack 1.2s;
+          animation: heartanimblack 1.2s;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+
+         
+}
+/*coeur animation gradient*/
+@keyframes heartanim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*coeur animation black*/
+@keyframes heartanimblack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*bouton_explorer_commander*/
+.button-active {
+  text-align: center;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px #aaaaaa;
+  background: linear-gradient(#ea72da, #9356dc);
+  transition: box-shadow 0.5s ease-in-out 0;
+  justify-content: center;
+  color: white;
+  -webkit-box-align: center;
+}
+
+.button-active_text{
+  color: white;
+}
+.button-active:hover{
+  box-shadow: 0 5px 15px #787878;
+}
+.button-active:hover::after{
+  opacity: 1;
+}
+.button-active::after{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 30px;
+  content: "";
+  background: rgba(255, 255, 255, 0.25s);
+  transition: opacity 0.5s ease-in-out 0s;
+}
+.order-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 0;
+  padding-top:40px;
+  padding-bottom: 40px
+}

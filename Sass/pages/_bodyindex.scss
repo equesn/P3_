@@ -1,0 +1,175 @@
+/*présentation_découverte*/
+.discover{
+  background-color: #f6f6f6;
+  text-align: center;
+  padding: 50px 20px 50px 20px;
+  }
+
+h1{
+  font-size: 24px;
+  font-weight: 900;
+  color: black;
+}
+
+.presentation_text{
+  font-size: 18px;
+  font-weight: 100;
+  color: black;
+  margin: 5px 10px 25px;
+  text-align: center;
+}
+
+/*fonctionnement*/
+.function {
+  padding: 50px 20px 50px 20px;
+}
+.function__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+}
+
+.button-step {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  padding: 30px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 12.5px;
+  box-shadow: 0 10px 10px #e6e6e6;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+/*changement_survolviolet*/
+.button-step__round {
+  position: absolute;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #9356DC;
+  color: white;
+  line-height: 25px;
+  left: -12.5px;
+  top: calc(50% - 25px /2 );
+}
+.button-step__text {
+  font-weight: 800;
+  font-size: 17px;
+  vertical-align: middle;
+}
+/*icons + changement au survol*/
+.button-step__icon {
+  color: #aaaaaa;
+  align-self: center;
+  transition: color 0.5s ease-in-out 0s;
+  margin-right: 20px;
+}
+.button-step:hover {
+  background-color: #f2eafb;
+  box-shadow: 0 5px 15px #aaaaaa;
+}
+.button-step:hover .button-step__icon {
+  color: #9356DC;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/*responsive*/
+@media screen and (max-width:550px) {
+  .function_contenair{
+    min-width: 230px;
+  }
+}
+
+h2{
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.index-box{
+  font-weight: bold;
+  border-radius: 15px;
+  background: #f6f6f6;
+  display: flex;
+  padding: 15px;
+  box-shadow: 2px 2px 5px 2px #dddddd;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 12.5px;
+  justify-content: left;
+  align-items: baseline;
+  flex-direction: row;
+  position: relative;
+  flex-grow: 1;
+}
+/*pin_fonctionnement*/
+.pin{
+  position: relative;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #9356dc;
+  color: white;
+  line-height: 25px;
+  left: -25px;
+}
+
+
+/*loading-spinner*/
+.screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.9;
+  z-index: 5;
+  animation: screen 3s forwards 3.6s;
+}
+.screen .blocspinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.screen .blocspinner > div {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  animation: balle 1.2s ease-in-out both 4;
+}
+.screen .blocspinner .balle1 {
+  background: #9356dc;
+}
+.screen .blocspinner .balle2 {
+  animation-delay: 0.2s;
+  background: #ff79da;
+}
+.screen .blocspinner .balle3 {
+  animation-delay: 0.4s;
+  background: #95e2d0;
+}
+/*animation_loadingspinner*/
+@keyframes balle {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+@keyframes screen {
+  to {
+    z-index: -999;
+  }
+}
+
+
